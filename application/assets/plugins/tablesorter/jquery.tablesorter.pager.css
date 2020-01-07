@@ -1,0 +1,124 @@
+/* pager wrapper, div */
+.tablesorter-pager {
+	padding: 5px;
+}
+/* pager wrapper, in thead/tfoot */
+td.tablesorter-pager {
+	background-color: #e6eeee;
+	margin: 0; /* needed for bootstrap .pager gets a 18px bottom margin */
+}
+/* pager navigation arrows */
+.tablesorter-pager img {
+	vertical-align: middle;
+	margin-right: 2px;
+	cursor: pointer;
+}
+
+/* pager output text */
+.tablesorter-pager .pagedisplay {
+	padding: 0 5px 0 5px;
+	width: auto;
+	white-space: nowrap;
+	text-align: center;
+}
+
+/* pager element reset (needed for bootstrap) */
+.tablesorter-pager select {
+	margin: 0;
+	padding: 0;
+}
+
+/*** css used when "updateArrows" option is true ***/
+/* the pager itself gets a disabled class when the number of rows is less than the size */
+.tablesorter-pager.disabled {
+	display: none;
+}
+/* hide or fade out pager arrows when the first or last row is visible */
+.tablesorter-pager .disabled {
+	/* visibility: hidden */
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	cursor: default;
+}
+
+/* REQUIRED CSS: change your reflow breakpoint here (35em below) */
+@media ( max-width: 35em ) {
+
+  /* uncomment out the line below if you don't want the sortable headers to show */
+  /* table.ui-table-reflow thead { display: none; } */
+
+  /* css for reflow & reflow2 widgets */
+  .ui-table-reflow td,
+  .ui-table-reflow th {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: right;
+    /* if not using the stickyHeaders widget (not the css3 version)
+     * the "!important" flag, and "height: auto" can be removed */
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* reflow widget only */
+  .ui-table-reflow tbody td[data-title]:before {
+    color: #469;
+    font-size: .9em;
+    content: attr(data-title);
+    float: left;
+    width: 50%;
+    white-space: pre-wrap;
+    text-align: bottom;
+    display: inline-block;
+  }
+
+  /* reflow2 widget only */
+  table.ui-table-reflow .ui-table-cell-label.ui-table-cell-label-top {
+    display: block;
+    padding: .4em 0;
+    margin: .4em 0;
+    text-transform: uppercase;
+    font-size: .9em;
+    font-weight: 400;
+  }
+  table.ui-table-reflow .ui-table-cell-label {
+    padding: .4em;
+    min-width: 30%;
+    display: inline-block;
+    margin: -.4em 1em -.4em -.4em;
+  }
+
+} /* end media query */
+
+/* reflow2 widget */
+.ui-table-reflow .ui-table-cell-label {
+  display: none;
+}
+
+thead.hide-header {
+    display: none;
+}
+
+.pr-full {
+	max-width:400px;
+	overflow:hidden;
+}
+.ui-table-reflow tbody td[data-title]:before {
+    color: #469;
+    font-size: .9em;
+    content: attr(data-title);
+    float: left;
+    width: 50%;
+    white-space: pre-wrap;
+    text-align: bottom;
+    display: inline-block;
+}
+.ui-table-reflow .project-actions {
+	border-bottom: 2px solid #82cffa;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+}
+.ui-table-reflow .p-right {
+	float: right;
+	margin-right: 10px;
+}
